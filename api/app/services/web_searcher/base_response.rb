@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Searcher
+module WebSearcher
   # Base Response Object
   class BaseResponse
     attr_reader :search_result

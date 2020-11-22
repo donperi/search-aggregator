@@ -2,9 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher::Providers::Google::Response do
+RSpec.describe WebSearcher::Providers::Google::Response do
   let(:search_response) do
-    search = Searcher::Providers::Google::Search.new('ruby', 0)
+    search = WebSearcher::Providers::Google::Search.new('ruby', 0)
     search.search_response
   end
 
@@ -20,7 +20,7 @@ RSpec.describe Searcher::Providers::Google::Response do
     it('should return collection of ResponseItems') do
       VCR.use_cassette('searcher_ruby_google') do
         subject.map do |result|
-          expect(result).to be_instance_of(Searcher::Providers::Google::ResultItem)
+          expect(result).to be_instance_of(WebSearcher::Providers::Google::ResultItem)
         end
       end
     end

@@ -2,9 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher::Providers::Bing::Response do
+RSpec.describe WebSearcher::Providers::Bing::Response do
   let(:search_response) do
-    search = Searcher::Providers::Bing::Search.new('ruby', 0)
+    search = WebSearcher::Providers::Bing::Search.new('ruby', 0)
     search.search_response
   end
 
@@ -20,7 +20,7 @@ RSpec.describe Searcher::Providers::Bing::Response do
     it('should return collection of ResponseItems') do
       VCR.use_cassette('searcher_ruby_bing') do
         subject.map do |result|
-          expect(result).to be_instance_of(Searcher::Providers::Bing::ResultItem)
+          expect(result).to be_instance_of(WebSearcher::Providers::Bing::ResultItem)
         end
       end
     end

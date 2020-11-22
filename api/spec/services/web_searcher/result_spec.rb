@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher::Result do
+RSpec.describe WebSearcher::Result do
   describe '#items' do
     it 'should return all the results from all the responses in the response item order' do
       responses = [

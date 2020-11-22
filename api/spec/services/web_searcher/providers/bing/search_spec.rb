@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher::Providers::Bing::Search do
+RSpec.describe WebSearcher::Providers::Bing::Search do
   let(:search_term) { 'ruby' }
   let(:offset) { 0 }
 
@@ -45,7 +45,7 @@ RSpec.describe Searcher::Providers::Bing::Search do
 
     it 'should return Response object' do
       VCR.use_cassette('searcher_ruby_bing') do
-        expect(subject.call).to be_instance_of(Searcher::Providers::Bing::Response)
+        expect(subject.call).to be_instance_of(WebSearcher::Providers::Bing::Response)
       end
     end
   end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher::Providers::Google::Search do
+RSpec.describe WebSearcher::Providers::Google::Search do
   let(:search_term) { 'ruby' }
   let(:offset) { 0 }
 
@@ -47,7 +47,7 @@ RSpec.describe Searcher::Providers::Google::Search do
 
     it 'should return Response object' do
       VCR.use_cassette('searcher_ruby_google') do
-        expect(subject.call).to be_instance_of(Searcher::Providers::Google::Response)
+        expect(subject.call).to be_instance_of(WebSearcher::Providers::Google::Response)
       end
     end
   end

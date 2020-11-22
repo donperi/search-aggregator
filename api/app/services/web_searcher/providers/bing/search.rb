@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module Searcher
+module WebSearcher
   module Providers
     module Bing
 
       # Search class for google
-      class Search < ::Searcher::BaseSearch
+      class Search < ::WebSearcher::BaseSearch
         SEARCH_URL = 'https://api.bing.microsoft.com/v7.0/search'
 
         def name

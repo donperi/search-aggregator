@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher::Providers::Google::ResultItem do
+RSpec.describe WebSearcher::Providers::Google::ResultItem do
   let(:object) do
     JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'google_result_item.json')))
   end

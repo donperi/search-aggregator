@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Searcher
+module WebSearcher
 
   # Hello
   class BaseResultItem

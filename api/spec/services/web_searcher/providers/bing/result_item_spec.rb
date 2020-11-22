@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher::Providers::Bing::ResultItem do
+RSpec.describe WebSearcher::Providers::Bing::ResultItem do
   let(:object) do
     JSON.parse(File.read(Rails.root.join('spec', 'fixtures', 'bing_result_item.json')))
   end

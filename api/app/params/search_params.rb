@@ -9,7 +9,7 @@ class SearchParams
 
   def initialize(term:, engines:, offset: 0)
     @term = term
-    @engines = Searcher.engines_map.keys & Array(engines).map(&:to_sym)
+    @engines = WebSearcher.providers_map.keys & Array(engines).map(&:to_sym)
     @offset = offset
   end
 

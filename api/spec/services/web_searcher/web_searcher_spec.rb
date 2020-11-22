@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Searcher do
+RSpec.describe WebSearcher do
   describe '#call' do
     it 'should call Search with multiple engines' do
       VCR.use_cassette('searcher_ruby_google_bing') do

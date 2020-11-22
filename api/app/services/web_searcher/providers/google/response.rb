@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module Searcher
+module WebSearcher
   module Providers
-    module Bing
+    module Google
       # Google Response
-      class Response < ::Searcher::BaseResponse
+      class Response < ::WebSearcher::BaseResponse
         def results
-          search_result['webPages']['value']
+          search_result['items']
         end
       end
     end

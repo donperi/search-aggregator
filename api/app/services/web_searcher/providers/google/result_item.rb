@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module Searcher
+module WebSearcher
   module Providers
     module Google
-      class ResultItem < ::Searcher::BaseResultItem
+      class ResultItem < ::WebSearcher::BaseResultItem
         def source
           :google
         end

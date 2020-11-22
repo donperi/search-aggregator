@@ -9,7 +9,7 @@ class SearchController < ApplicationController
       }
     end
 
-    @result = Searcher.call(
+    @result = WebSearcher.call(
       term: search_params.term,
       offset: search_params.offset,
       engines: search_params.engines

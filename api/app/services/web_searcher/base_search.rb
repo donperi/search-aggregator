@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module Searcher
+module WebSearcher
   # Base Search class for each engine.
   class BaseSearch
     attr_reader :term, :offset, :cache
 
     # @param [String] term
     # @param [Integer] offset
-    # @return [Searcher::BaseResponse]
+    # @return [WebSearcher::BaseResponse]
     def initialize(term, offset = 0, cache: true)
       @term = term
       @offset = offset
@@ -18,7 +18,7 @@ module Searcher
     #
     # @param [String] term
     # @param [Integer] offset
-    # @return [Searcher::BaseResponse]
+    # @return [WebSearcher::BaseResponse]
     def self.call(term = '', offset = 0, cache: true)
       new(term, offset, cache: cache).call
     end
