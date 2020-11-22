@@ -1,0 +1,19 @@
+{
+  "kind": "customsearch#result",
+  "title": "Ruby Programming Language",
+  "htmlTitle": "<b>Ruby Programming</b> Language",
+  "link": "https://www.ruby-lang.org/en/",
+  "displayLink": "www.ruby-lang.org",
+  "snippet": "Ruby is... A dynamic, open source programming language with a focus on \nsimplicity and productivity. It has an elegant syntax that is natural to read and \neasy to ...",
+  "htmlSnippet": "<b>Ruby</b> is... A dynamic, open source <b>programming</b> language with a focus on <br>\nsimplicity and productivity. It has an elegant syntax that is natural to read and <br>\neasy to&nbsp;...",
+  "cacheId": "bvnZg5Jj60gJ",
+  "formattedUrl": "https://www.ruby-lang.org/en/",
+  "htmlFormattedUrl": "https://www.<b>ruby</b>-lang.org/en/",
+  "pagemap": {
+    "metatags": [
+      {
+        "viewport": "width=device-width, initial-scale=1.0"
+      }
+    ]
+  }
+}

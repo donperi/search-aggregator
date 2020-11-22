@@ -1,0 +1,12 @@
+{
+  "id": "https://api.bing.microsoft.com/api/v7/#WebPages.2",
+  "name": "Ruby Programming Language",
+  "url": "https://www.ruby-lang.org/en/",
+  "isFamilyFriendly": true,
+  "displayUrl": "https://www.ruby-lang.org/en",
+  "snippet": "Other News. Support of Ruby 2.4 has ended Posted by usa on 5 Apr 2020; Ruby 2.7.1 Released Posted by naruse on 31 Mar 2020; Ruby 2.6.6 Released Posted by nagachika on 31 Mar 2020",
+  "dateLastCrawled": "2020-11-19T12:19:00.0000000Z",
+  "language": "en",
+  "isNavigational": false
+}
+
