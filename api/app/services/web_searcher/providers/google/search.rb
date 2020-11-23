@@ -13,11 +13,15 @@ module WebSearcher
         end
 
         def access_token
+          raise('Google Search Key missing') if ENV['GOOGLE_SEARCH_KEY'].blank?
+
           ENV['GOOGLE_SEARCH_KEY'] or raise('Google Search Key missing')
         end
 
         def search_custom_engine
-          ENV['GOOGLE_CUSTOM_ENGINE'] or raise('Google Custom Engine missing')
+          raise('Google Custom Engine missing') if ENV['GOOGLE_CUSTOM_ENGINE'].blank?
+
+          ENV['GOOGLE_CUSTOM_ENGINE']
         end
 
         def query

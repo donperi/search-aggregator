@@ -17,6 +17,8 @@ module WebSearcher
         end
 
         def access_token
+          raise('Bing Key missing.') if ENV['BING_SEARCH_KEY'].blank?
+
           ENV['BING_SEARCH_KEY'] or raise('Bing Key missing.')
         end
 

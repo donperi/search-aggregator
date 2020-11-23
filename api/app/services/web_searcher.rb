@@ -15,13 +15,19 @@ module WebSearcher
   # @param [Integer] offset
   # @param [Array<String>|Array<Symbol>|Symbol|String] engines
   # @return [WebSearcher::Result]
-  def self.call(term:, offset:, engines: [])
-    responses = Array(engines).map do |engine|
-      return nil if providers_map[engine.to_sym].nil?
+  def self.call(term:, offset:, providers: [])
+    result = Result.new
 
-      providers_map[engine.to_sym].call(term, offset, cache: true)
+    Array(providers).each do |provider|
+      return nil if providers_map[provider.to_sym].nil?
+
+      begin
+        result.responses << providers_map[provider.to_sym].call(term, offset, cache: true)
+      rescue StandardError => e
+        result.add_provider_error(provider, e.message)
+      end
     end.compact
 
-    Result.new(responses)
+    result
   end
 end

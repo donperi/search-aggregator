@@ -9,7 +9,7 @@ RSpec.describe WebSearcher do
         result = described_class.call(
           term: 'ruby',
           offset: 0,
-          engines: %i[google bing]
+          providers: %i[google bing]
         )
 
         expect(result.items.length).to eq(20)
@@ -22,12 +22,31 @@ RSpec.describe WebSearcher do
         result = described_class.call(
           term: 'ruby',
           offset: 0,
-          engines: %i[google]
+          providers: %i[google]
         )
 
         expect(result.items.length).to eq(10)
+        expect(result.errors.length).to eq(0)
         expect(result.total).to eq(10)
       end
+    end
+
+    it 'should add error message if provider call fails' do
+      allow(WebSearcher::Providers::Google::Search).to receive(:call).and_raise(StandardError.new('provider error'))
+
+      result = described_class.call(
+        term: 'ruby',
+        offset: 0,
+        providers: %i[google]
+      )
+
+      expect(result.items.length).to eq(0)
+      expect(result.errors.length).to eq(1)
+      expect(result.errors).to eq({
+                                    google: ['provider error'],
+                                  })
+      expect(result.total).to eq(0)
+
     end
   end
 end

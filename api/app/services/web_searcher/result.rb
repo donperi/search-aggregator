@@ -4,11 +4,12 @@ module WebSearcher
 
   # Result object from a search
   class Result
-    attr_reader :responses
+    attr_accessor :responses, :errors
 
-    def initialize(responses)
+    def initialize(responses = [])
       @responses = Array(responses)
       @total = 0
+      @errors = {}
     end
 
     def items
@@ -25,6 +26,11 @@ module WebSearcher
 
     def total
       items.length
+    end
+
+    def add_provider_error(provider, message)
+      errors[provider] = [] if errors[provider].nil?
+      errors[provider] << message
     end
 
     delegate :each, :[], :map, :reduce, :select, :find, to: :items

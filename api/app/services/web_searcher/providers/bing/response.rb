@@ -6,7 +6,7 @@ module WebSearcher
       # Google Response
       class Response < ::WebSearcher::BaseResponse
         def results
-          search_result['webPages']['value']
+          search_result['webPages']['value'] || []
         end
       end
     end

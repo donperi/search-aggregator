@@ -5,4 +5,5 @@ json.items @result.items do |node|
   json.source node.source
 end
 
+json.errors @result.errors
 json.total @result.total

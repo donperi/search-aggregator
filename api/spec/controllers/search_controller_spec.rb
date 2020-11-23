@@ -22,6 +22,7 @@ RSpec.describe SearchController, type: :controller do
         json_response = JSON.parse(response.body)
 
         expect(json_response['items'].length).to be(10)
+        expect(json_response['errors'].keys.length).to be(0)
         expect(json_response['total']).to be(10)
 
         expect(response).to have_http_status(:ok)

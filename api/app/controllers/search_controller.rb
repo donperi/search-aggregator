@@ -12,7 +12,7 @@ class SearchController < ApplicationController
     @result = WebSearcher.call(
       term: search_params.term,
       offset: search_params.offset,
-      engines: search_params.engines
+      providers: search_params.engines
     )
   end
 
