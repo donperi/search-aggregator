@@ -65,6 +65,17 @@ RSpec.configure do |config|
   #
 
   VCR.configure do |config|
+    term_matcher = lambda do |request1, request2|
+      params1 = CGI.parse(URI.parse(request1.uri).query)
+      params2 = CGI.parse(URI.parse(request2.uri).query)
+
+      query1 = [params1['q'], params2['start']]
+      query2 = [params2['q'], params2['start']]
+
+      query1 == query2
+    end
+
+    config.default_cassette_options = { match_requests_on: [:method, :host, term_matcher] }
     config.cassette_library_dir = Rails.root.join('spec', 'fixtures', 'vcr')
     config.hook_into :webmock
   end
